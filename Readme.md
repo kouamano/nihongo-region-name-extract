@@ -30,8 +30,10 @@
 [Mathematica]
 5- 2に対して4を当てる
 
-## 判定結果
-[中間報告]
+## 結果
+[出力結果]
+
+[判定結果中間報告]
 https://kadai-my.sharepoint.com/:x:/r/personal/k7085637_kadai_jp/_layouts/15/doc2.aspx?sourcedoc=%7B2BF90661-4198-41EA-A407-4B2D7B1C4B34%7D&file=Book.xlsx&action=editNew&mobileredirect=true&wdOrigin=MAIL.SHELL%2CAPPHOME-WEB.UNAUTH%2CAPPHOME-WEB.BANNER.NEWBLANK&wdPreviousSession=9ab82ca7-4190-42dd-a786-52e52fede2bf&wdPreviousSessionSrc=AppHomeWeb&ct=1752567027023
 
 ## サービス展開
