@@ -29,9 +29,12 @@
 4.2- 地名を出力しあらためてmecabに当てる
 [Mathematica]
 5- 2に対して4を当てる
+[生成物]
+kokuritsu-daigaku/20250714_KAKEN/<番号>_chimeiResultMCB3.save
 
 ## 結果
 [出力結果]
+https://github.com/kouamano/nihongo-region-name-extract/tree/main/kokuritsu-daigaku/20250714_KAKEN/*MCB3.save
 
 [判定結果中間報告]
 https://kadai-my.sharepoint.com/:x:/r/personal/k7085637_kadai_jp/_layouts/15/doc2.aspx?sourcedoc=%7B2BF90661-4198-41EA-A407-4B2D7B1C4B34%7D&file=Book.xlsx&action=editNew&mobileredirect=true&wdOrigin=MAIL.SHELL%2CAPPHOME-WEB.UNAUTH%2CAPPHOME-WEB.BANNER.NEWBLANK&wdPreviousSession=9ab82ca7-4190-42dd-a786-52e52fede2bf&wdPreviousSessionSrc=AppHomeWeb&ct=1752567027023
