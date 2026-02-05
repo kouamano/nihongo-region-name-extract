@@ -32,6 +32,9 @@
 [生成物]
 kokuritsu-daigaku/20250714_KAKEN/<番号>_chimeiResultMCB3.save
 
+[ドキュメント]
+- 概要.nb
+
 ## 結果
 [出力結果]
 https://github.com/kouamano/nihongo-region-name-extract/tree/main/kokuritsu-daigaku/20250714_KAKEN/*MCB3.save
