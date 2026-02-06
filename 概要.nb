@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     12513,        257]
-NotebookOptionsPosition[     10896,        226]
-NotebookOutlinePosition[     11365,        243]
-CellTagsIndexPosition[     11322,        240]
+NotebookDataLength[     12573,        258]
+NotebookOptionsPosition[     10958,        227]
+NotebookOutlinePosition[     11425,        244]
+CellTagsIndexPosition[     11382,        241]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -106,8 +106,8 @@ Cell["\<\
 \:5f62\:614b\:7d20\:89e3\:6790\:3092\:884c\:3046
 \:3000- \:30de\:30c3\:30c1\:306f\:5b8c\:5168\:4e00\:81f4\:3067\:884c\:3046
 \:3000- case 2.1\:3000\:5730\:540d\:3092\:5f62\:614b\:7d20\:89e3\:6790\:3057\
-\:3066\:56fa\:6709\:540d\:8a5e\:3001\:4e00\:822c\:540d\:8a5e\:3092\:9078\:629e\
-\:3059\:308b
+\:3066\:56fa\:6709\:540d\:8a5e\:307e\:305f\:306f\:4e00\:822c\:540d\:8a5e\:3092\
+\:9078\:629e\:3059\:308b
 \:3000- case 2.2\:3000\:5730\:540d\:3092\:5f62\:614b\:7d20\:89e3\:6790\:3057\
 \:3066\:56fa\:6709\:540d\:8a5e\:3092\:9078\:629e\:3059\:308b
 \:3000- case 2.3\:3000\:5730\:540d\:3092\:5f62\:614b\:7d20\:89e3\:6790\:3057\
@@ -135,8 +135,9 @@ Cell["\<\
    3.976822774322043*^9, 3.976822971074808*^9}, {3.976823279924652*^9, 
    3.976823294186326*^9}, {3.976823676252442*^9, 3.9768237728209476`*^9}, {
    3.976825569622484*^9, 3.976825686369094*^9}, {3.977789924167387*^9, 
-   3.977789964546958*^9}, {3.9777900405222187`*^9, 
-   3.977790043035096*^9}},ExpressionUUID->"33fe8e0b-8d6c-4770-a198-\
+   3.977789964546958*^9}, {3.9777900405222187`*^9, 3.977790043035096*^9}, {
+   3.979341988159645*^9, 
+   3.979341990590295*^9}},ExpressionUUID->"33fe8e0b-8d6c-4770-a198-\
 af3a01c50dcb"],
 
 Cell["\<\
@@ -225,7 +226,7 @@ d447a13f6558"]
 }, Open  ]]
 },
 WindowSize->{1081, 911},
-WindowMargins->{{Automatic, 605}, {Automatic, 0}},
+WindowMargins->{{Automatic, 8}, {Automatic, 0}},
 FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (2025\:5e747\:67088\:65e5)",
 StyleDefinitions->FrontEnd`FileName[{"SlideShow"}, "Opal.nb", 
   CharacterEncoding -> "UTF-8"],
@@ -252,12 +253,12 @@ Cell[1902, 49, 407, 6, 57, "Text",ExpressionUUID->"6c447f5e-0c00-4a45-ad28-8a401
 Cell[2312, 57, 408, 9, 148, "Text",ExpressionUUID->"b00e35a0-e806-44f0-be61-63006c409847"],
 Cell[2723, 68, 711, 13, 148, "Text",ExpressionUUID->"0ab716b9-461f-45e7-9bfc-f648c0f2291f"],
 Cell[3437, 83, 540, 12, 178, "Text",ExpressionUUID->"8d6cc544-61b5-4db6-9371-65f96d67830b"],
-Cell[3980, 97, 2399, 42, 481, "Text",ExpressionUUID->"33fe8e0b-8d6c-4770-a198-af3a01c50dcb"],
-Cell[6382, 141, 661, 11, 117, "Text",ExpressionUUID->"d39c2358-5432-4c44-8ed5-03d8b9af0d61"],
-Cell[7046, 154, 376, 8, 87, "Text",ExpressionUUID->"801de1b3-aa84-4354-9b0c-03ff79c9ff24"],
-Cell[7425, 164, 99, 1, 4, "PageBreak",ExpressionUUID->"848d1f79-6b9c-42db-a66c-2bc7ae5432bf",
+Cell[3980, 97, 2461, 43, 481, "Text",ExpressionUUID->"33fe8e0b-8d6c-4770-a198-af3a01c50dcb"],
+Cell[6444, 142, 661, 11, 117, "Text",ExpressionUUID->"d39c2358-5432-4c44-8ed5-03d8b9af0d61"],
+Cell[7108, 155, 376, 8, 87, "Text",ExpressionUUID->"801de1b3-aa84-4354-9b0c-03ff79c9ff24"],
+Cell[7487, 165, 99, 1, 4, "PageBreak",ExpressionUUID->"848d1f79-6b9c-42db-a66c-2bc7ae5432bf",
  PageBreakBelow->True],
-Cell[7527, 167, 3353, 56, 822, "Text",ExpressionUUID->"7db3e612-fe69-46da-827b-d447a13f6558"]
+Cell[7589, 168, 3353, 56, 822, "Text",ExpressionUUID->"7db3e612-fe69-46da-827b-d447a13f6558"]
 }, Open  ]]
 }
 ]
