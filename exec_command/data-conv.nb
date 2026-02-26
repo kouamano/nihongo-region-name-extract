@@ -1,0 +1,1729 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     87799,       1721]
+NotebookOptionsPosition[     85283,       1673]
+NotebookOutlinePosition[     85689,       1689]
+CellTagsIndexPosition[     85646,       1686]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Data convert", "Title",
+ CellChangeTimes->{{3.98097173949935*^9, 
+  3.980971752132798*^9}},ExpressionUUID->"d7648ade-fd25-4efb-bbda-\
+1b130beebfe0"],
+
+Cell["JSON\:306b\:5909\:63db\:3059\:308b\:3002\:ff08\[CloseCurlyDoubleQuote]\
+JSONLines\[CloseCurlyDoubleQuote]\:3060\:3068\:306a\:306b\:304b\:5909\:ff09", \
+"Text",
+ CellChangeTimes->{{3.980971821053651*^9, 
+  3.980971859624858*^9}},ExpressionUUID->"bf9a9597-a1bf-4d8d-ac25-\
+e565bf99ce97"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dir", 
+  "=", "\"\</Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\>\""}\
+]], "Input",
+ CellChangeTimes->{{3.980971053598064*^9, 3.9809710691930513`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"f487dc87-72cd-477a-9aef-47054063e20f"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\
+\"\>"], "Output",
+ CellChangeTimes->{3.9809710705841703`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"ceb65bb8-b67a-4760-9302-57987f23d374"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "dir", "]"}]], "Input",
+ CellChangeTimes->{{3.980971075627101*^9, 3.980971094917121*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d354320b-d0db-4f4e-9288-94a9e5fdc871"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN\
+\"\>"], "Output",
+ CellChangeTimes->{{3.98097108974973*^9, 3.980971096224115*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"1eeb79d1-8c52-411d-9574-06bf245ab394"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{"FileNames", "[", "\"\<*MCB*.save\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9809711007229357`*^9, 3.9809711285155897`*^9}, {
+  3.980971243147841*^9, 3.980971264612988*^9}, {3.980971780671658*^9, 
+  3.980971781453064*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"dc483e03-b071-4a58-a668-8ba60d7344c0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"01_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"01_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"01_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"02_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"02_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"02_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"03_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"03_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"03_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"04_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"04_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"04_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"05_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"05_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"05_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"06_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"06_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"06_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"07_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"07_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"07_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"08_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"08_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"08_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"09_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"09_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"09_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"10_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"10_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"10_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"11_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"11_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"11_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"12_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"12_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"12_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"13_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"13_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"13_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"14_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"14_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"14_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"15_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"15_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"15_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"16_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"16_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"16_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"17_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"17_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"17_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"18_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"18_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"18_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"19_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"19_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"19_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"20_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"20_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"20_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"21_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"21_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"21_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"22_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"22_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"22_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"23_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"23_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"23_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"24_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"24_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"24_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"25_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"25_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"25_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"26_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"26_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"26_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"27-1_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"27-1_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"27-1_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"27-2_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"27-2_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"27-2_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"27_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"27_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"27_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"28-1_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"28-1_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"28-1_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"28-2_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"28-2_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"28-2_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"28_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"28_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"28_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"29_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"29_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"29_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"30_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"30_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"30_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"31_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"31_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"31_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"32_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"32_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"32_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"33_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"33_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"33_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"34_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"34_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"34_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"35_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"35_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"35_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"36_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"36_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"36_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"37_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"37_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"37_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"38_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"38_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"38_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"39_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"39_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"39_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"40_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"40_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"40_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"41_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"41_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"41_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"42_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"42_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"42_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"43_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"43_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"43_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"44_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"44_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"44_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"45_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"45_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"45_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"46_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"46_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"46_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"47_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"47_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"47_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"48_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"48_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"48_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"49_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"49_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"49_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"50_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"50_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"50_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"51_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"51_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"51_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"52_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"52_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"52_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"53_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"53_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"53_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"54_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"54_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"54_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"55_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"55_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"55_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"56_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"56_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"56_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"57_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"57_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"57_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"58_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"58_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"58_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"59_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"59_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"59_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"60_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"60_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"60_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"61_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"61_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"61_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"62_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"62_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"62_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"63_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"63_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"63_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"64_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"64_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"64_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"65_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"65_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"65_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"66_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"66_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"66_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"67_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"67_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"67_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"68_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"68_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"68_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"69_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"69_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"69_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"70_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"70_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"70_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"71_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"71_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"71_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"72_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"72_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"72_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"73_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"73_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"73_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"74_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"74_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"74_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"75_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"75_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"75_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"76_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"76_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"76_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"77_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"77_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"77_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"78_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"78_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"78_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"79_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"79_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"79_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"80_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"80_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"80_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"81_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"81_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"81_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"82_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"82_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"82_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"83_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"83_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"83_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"84_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"84_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"84_chimeiResultMCB3.save\"\>", 
+   ",", "\<\"85_chimeiResultMCB1.save\"\>", 
+   ",", "\<\"85_chimeiResultMCB2.save\"\>", 
+   ",", "\<\"85_chimeiResultMCB3.save\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.980971256657502*^9, 3.9809712650961657`*^9}, 
+   3.98097178201864*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"721042d4-54c7-4307-959f-71f94d652d38"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"contents", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Get", ",", "files"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9809722303011713`*^9, 3.980972262217683*^9}, {
+  3.98097232622443*^9, 3.980972331262793*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"894f068a-c468-4ef3-add5-7942347522b7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "partw", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\
+\\\"\:822a\:7a7a\:7523\:696d\:306b\:304a\:3051\:308b\:5354\:8abf\:7684\:4f01\
+\:696d\:884c\:52d5\:3068\:4f01\:696d\:9593\:53d6\:5f15\:5f62\:614b\:306b\:3064\
+\:3044\:3066\:306e\:5206\:6790\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15730110\\\
+\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"752\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:9ad8\:6e29\:8d85\:96fb\
+\:5c0e\:30d0\:30eb\:30af\:78c1\:77f3\:3092\:5fdc\:7528\:3057\:305f\:8239\:5185\
+\:30d0\:30e9\:30b9\:30c8\:6c34\:6d44\:5316\:30b7\:30b9\:30c6\:30e0\:306e\:7814\
+\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15656219\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"815\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \
+\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:6d45\:6c34\:57df\:306b\:304a\:3051\
+\:308b\:8239\:8236\:306e\:64cd\:7e26\:6027\:57fa\:6e96\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15636023\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"726\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"45\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\
+\:6570\:5024\:6ce2\:6d6a\:4e88\:5831\:7cbe\:5ea6\:60c5\:5831\:306b\:57fa\:3065\
+\:304f\:78ba\:7387\:7684\:306a\:822a\:8def\:9078\:5b9a\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"10650901\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"987\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:4eba\:9593\
+\:5de5\:5b66\:7684\:89b3\:70b9\:304b\:3089\:307f\:305f\:6e2f\:6e7e\:30bf\:30fc\
+\:30df\:30ca\:30eb\:8a2d\:8a08\:306e\:305f\:3081\:306e\:4eee\:60f3\:73fe\:5b9f\
+\:611f\:306e\:5fdc\:7528\:306b\:95a2\:3059\:308b\:7814\:7a76\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"10650900\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\
+\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"750\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"122\\\", \\\"\[RightSkeleton]\\\"}]}], \
+\\\"}\\\"}]\\)\:306e\:90e8\:5206\\!\\(\\*RowBox[{\\\"173\\\"}]\\)\:306f\:5b58\
+\:5728\:3057\:307e\:305b\:3093\:ff0e\"", 2, 39, 9, 32735760505337052537, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972268348729*^9, 3.980972333957987*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[39]:=",ExpressionUUID->"ee82d6b9-b60d-4ce2-b385-\
+10be33c6e408"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "partw", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\
+\\\"\:822a\:7a7a\:7523\:696d\:306b\:304a\:3051\:308b\:5354\:8abf\:7684\:4f01\
+\:696d\:884c\:52d5\:3068\:4f01\:696d\:9593\:53d6\:5f15\:5f62\:614b\:306b\:3064\
+\:3044\:3066\:306e\:5206\:6790\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15730110\\\
+\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"752\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:9ad8\:6e29\:8d85\:96fb\
+\:5c0e\:30d0\:30eb\:30af\:78c1\:77f3\:3092\:5fdc\:7528\:3057\:305f\:8239\:5185\
+\:30d0\:30e9\:30b9\:30c8\:6c34\:6d44\:5316\:30b7\:30b9\:30c6\:30e0\:306e\:7814\
+\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15656219\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"815\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \
+\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:6d45\:6c34\:57df\:306b\:304a\:3051\
+\:308b\:8239\:8236\:306e\:64cd\:7e26\:6027\:57fa\:6e96\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15636023\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"726\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"45\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\
+\:6570\:5024\:6ce2\:6d6a\:4e88\:5831\:7cbe\:5ea6\:60c5\:5831\:306b\:57fa\:3065\
+\:304f\:78ba\:7387\:7684\:306a\:822a\:8def\:9078\:5b9a\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"10650901\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"987\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:4eba\:9593\
+\:5de5\:5b66\:7684\:89b3\:70b9\:304b\:3089\:307f\:305f\:6e2f\:6e7e\:30bf\:30fc\
+\:30df\:30ca\:30eb\:8a2d\:8a08\:306e\:305f\:3081\:306e\:4eee\:60f3\:73fe\:5b9f\
+\:611f\:306e\:5fdc\:7528\:306b\:95a2\:3059\:308b\:7814\:7a76\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"10650900\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\
+\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"750\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"122\\\", \\\"\[RightSkeleton]\\\"}]}], \
+\\\"}\\\"}]\\)\:306e\:90e8\:5206\\!\\(\\*RowBox[{\\\"173\\\"}]\\)\:306f\:5b58\
+\:5728\:3057\:307e\:305b\:3093\:ff0e\"", 2, 39, 10, 32735760505337052537, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972268348729*^9, 3.980972333963398*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[39]:=",ExpressionUUID->"13639e4f-e747-4db7-9f2b-\
+b7130163376c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "partw", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\
+\\\"\:822a\:7a7a\:7523\:696d\:306b\:304a\:3051\:308b\:5354\:8abf\:7684\:4f01\
+\:696d\:884c\:52d5\:3068\:4f01\:696d\:9593\:53d6\:5f15\:5f62\:614b\:306b\:3064\
+\:3044\:3066\:306e\:5206\:6790\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15730110\\\
+\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"752\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:9ad8\:6e29\:8d85\:96fb\
+\:5c0e\:30d0\:30eb\:30af\:78c1\:77f3\:3092\:5fdc\:7528\:3057\:305f\:8239\:5185\
+\:30d0\:30e9\:30b9\:30c8\:6c34\:6d44\:5316\:30b7\:30b9\:30c6\:30e0\:306e\:7814\
+\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15656219\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"815\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \
+\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:6d45\:6c34\:57df\:306b\:304a\:3051\
+\:308b\:8239\:8236\:306e\:64cd\:7e26\:6027\:57fa\:6e96\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"15636023\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"726\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"45\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\
+\:6570\:5024\:6ce2\:6d6a\:4e88\:5831\:7cbe\:5ea6\:60c5\:5831\:306b\:57fa\:3065\
+\:304f\:78ba\:7387\:7684\:306a\:822a\:8def\:9078\:5b9a\:306b\:95a2\:3059\:308b\
+\:7814\:7a76\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"10650901\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"987\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"\:4eba\:9593\
+\:5de5\:5b66\:7684\:89b3\:70b9\:304b\:3089\:307f\:305f\:6e2f\:6e7e\:30bf\:30fc\
+\:30df\:30ca\:30eb\:8a2d\:8a08\:306e\:305f\:3081\:306e\:4eee\:60f3\:73fe\:5b9f\
+\:611f\:306e\:5fdc\:7528\:306b\:95a2\:3059\:308b\:7814\:7a76\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"10650900\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" \\\\\\\"\
+\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"750\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", \\\"\\\\\\\" \\\\\\\"\\\", \\\",\\\", \\\"\
+\\\\\\\" \\\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"122\\\", \\\"\[RightSkeleton]\\\"}]}], \
+\\\"}\\\"}]\\)\:306e\:90e8\:5206\\!\\(\\*RowBox[{\\\"173\\\"}]\\)\:306f\:5b58\
+\:5728\:3057\:307e\:305b\:3093\:ff0e\"", 2, 39, 11, 32735760505337052537, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972268348729*^9, 3.980972333975103*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[39]:=",ExpressionUUID->"4d545ef8-66fd-4f95-b3eb-\
+6b2d9c11c2f2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"\:3053\:306e\:8a08\:7b97\:4e2d\:306b\:ff0c\\!\\(\\*StyleBox[RowBox[{\\\"\
+Part\\\", \\\"::\\\", \\\"partw\\\"}], \\\"MessageName\\\"]\\)\:306e\:3053\
+\:308c\:4ee5\:4e0a\:306e\:51fa\:529b\:306f\:8868\:793a\:3055\:308c\:307e\:305b\
+\:3093\:ff0e\"", 2, 39, 12, 32735760505337052537, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972268348729*^9, 3.9809723339777*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[39]:=",ExpressionUUID->"83af5efb-ad2d-46d7-888d-\
+898e262f0fa8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"outfiles", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dir", "<>", 
+      RowBox[{"StringDrop", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"-", "4"}]}], "]"}], "<>", "\"\<json\>\""}], "&"}], ",", 
+    "files"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.980972340608568*^9, 3.980972389598383*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"9f3a4e93-fec1-4b42-9d8e-2816e9fbad7c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-1_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-1_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-1_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/66_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/66_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/66_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/85_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/85_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/85_\
+chimeiResultMCB3.json\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.9809723693983297`*^9, 3.980972390923064*^9}},
+ CellLabel->"Out[42]=",ExpressionUUID->"a73298a0-fbb5-4af2-9ef0-a8d5c798290a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapApply", "[", 
+  RowBox[{"Export", ",", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"outfiles", ",", "contents"}], "}"}], "//", "Transpose"}], 
+    ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9809724130009947`*^9, 3.980972417691258*^9}, {
+  3.980972448759005*^9, 3.98097248519449*^9}, {3.980972527720625*^9, 
+  3.980972554149601*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"48534b6f-e585-4218-9953-60dcf80f6691"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Export", "jsonstrictencoding", 
+   "\"\:5f0f\\!\\(\\*RowBox[{\\\"\\\\\\\"Part\\\\\\\"\\\"}]\\)\:306f\\!\\(\\*\
+RowBox[{\\\"\\\\\\\"JSON\\\\\\\"\\\"}]\\)\:3068\:3057\:3066\:306f\:30a8\:30ad\
+\:30b9\:30dd\:30fc\:30c8\:3067\:304d\:307e\:305b\:3093\:ff0e\"", 2, 48, 13, 
+   32735760505337052537, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972557414473*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[48]:=",ExpressionUUID->"926406d3-66d2-44ed-a38a-\
+2f94fe5d3f28"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Export", "jsonstrictencoding", 
+   "\"\:5f0f\\!\\(\\*RowBox[{\\\"\\\\\\\"Part\\\\\\\"\\\"}]\\)\:306f\\!\\(\\*\
+RowBox[{\\\"\\\\\\\"JSON\\\\\\\"\\\"}]\\)\:3068\:3057\:3066\:306f\:30a8\:30ad\
+\:30b9\:30dd\:30fc\:30c8\:3067\:304d\:307e\:305b\:3093\:ff0e\"", 2, 48, 14, 
+   32735760505337052537, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972557501762*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[48]:=",ExpressionUUID->"c18eb31f-ff52-4014-a1c4-\
+f3131b9094d7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Export", "jsonstrictencoding", 
+   "\"\:5f0f\\!\\(\\*RowBox[{\\\"\\\\\\\"Part\\\\\\\"\\\"}]\\)\:306f\\!\\(\\*\
+RowBox[{\\\"\\\\\\\"JSON\\\\\\\"\\\"}]\\)\:3068\:3057\:3066\:306f\:30a8\:30ad\
+\:30b9\:30dd\:30fc\:30c8\:3067\:304d\:307e\:305b\:3093\:ff0e\"", 2, 48, 15, 
+   32735760505337052537, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972558226735*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[48]:=",ExpressionUUID->"aae31d0f-e953-45ed-bd2c-\
+e78fcbafb388"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"\:3053\:306e\:8a08\:7b97\:4e2d\:306b\:ff0c\\!\\(\\*StyleBox[RowBox[{\\\"\
+Export\\\", \\\"::\\\", \\\"jsonstrictencoding\\\"}], \\\"MessageName\\\"]\\)\
+\:306e\:3053\:308c\:4ee5\:4e0a\:306e\:51fa\:529b\:306f\:8868\:793a\:3055\:308c\
+\:307e\:305b\:3093\:ff0e\"", 2, 48, 16, 32735760505337052537, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.980972558335815*^9},
+ CellLabel->
+  "\:8a55\:4fa1\:4e2d\:ff1aIn[48]:=",ExpressionUUID->"5e60aa06-e5e8-49d6-bb5f-\
+7005b5edd9be"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/01_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/02_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/03_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/04_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/05_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/06_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/07_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/08_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/09_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/10_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/11_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/12_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/13_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/14_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/15_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/16_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/17_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/18_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/19_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/20_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/21_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/22_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/23_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/24_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/25_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/26_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-1_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27-2_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/27_\
+chimeiResultMCB3.json\"\>", ",", "$Failed", ",", "$Failed", ",", "$Failed", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28-2_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/28_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/29_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/30_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/31_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/32_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/33_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/34_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/35_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/36_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/37_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/38_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/39_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/40_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/41_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/42_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/43_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/44_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/45_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/46_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/47_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/48_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/49_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/50_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/51_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/52_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/53_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/54_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/55_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/56_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/57_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/58_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/59_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/60_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/61_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/62_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/63_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/64_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/65_\
+chimeiResultMCB3.json\"\>", ",", "$Failed", ",", "$Failed", ",", "$Failed", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/67_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/68_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/69_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/70_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/71_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/72_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/73_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/74_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/75_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/76_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/77_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/78_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/79_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/80_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/81_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/82_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/83_\
+chimeiResultMCB3.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB1.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB2.json\"\>", 
+   ",", "\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/84_\
+chimeiResultMCB3.json\"\>", ",", "$Failed", ",", "$Failed", ",", "$Failed"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.9809724647119827`*^9, 3.980972480593031*^9}, 
+   3.980972525975891*^9, 3.980972561789921*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"cfde0da0-e3f4-4520-b197-dab635492434"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{548, Automatic}, {111, Automatic}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (2025\:5e747\:67088\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3db11b0b-8a63-4018-96d0-35488abd669a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 154, 3, 96, "Title",ExpressionUUID->"d7648ade-fd25-4efb-bbda-1b130beebfe0"],
+Cell[733, 27, 291, 5, 33, "Text",ExpressionUUID->"bf9a9597-a1bf-4d8d-ac25-e565bf99ce97"],
+Cell[CellGroupData[{
+Cell[1049, 36, 269, 5, 29, "Input",ExpressionUUID->"f487dc87-72cd-477a-9aef-47054063e20f"],
+Cell[1321, 43, 219, 3, 33, "Output",ExpressionUUID->"ceb65bb8-b67a-4760-9302-57987f23d374"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1577, 51, 211, 3, 42, "Input",ExpressionUUID->"d354320b-d0db-4f4e-9288-94a9e5fdc871"],
+Cell[1791, 56, 239, 3, 33, "Output",ExpressionUUID->"1eeb79d1-8c52-411d-9574-06bf245ab394"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2067, 64, 353, 6, 42, "Input",ExpressionUUID->"dc483e03-b071-4a58-a668-8ba60d7344c0"],
+Cell[2423, 72, 12260, 271, 1830, "Output",ExpressionUUID->"721042d4-54c7-4307-959f-71f94d652d38"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14720, 348, 331, 7, 42, "Input",ExpressionUUID->"894f068a-c468-4ef3-add5-7942347522b7"],
+Cell[15054, 357, 3219, 48, 108, "Message",ExpressionUUID->"ee82d6b9-b60d-4ce2-b385-10be33c6e408"],
+Cell[18276, 407, 3220, 48, 108, "Message",ExpressionUUID->"13639e4f-e747-4db7-9f2b-b7130163376c"],
+Cell[21499, 457, 3220, 48, 108, "Message",ExpressionUUID->"4d545ef8-66fd-4f95-b3eb-6b2d9c11c2f2"],
+Cell[24722, 507, 570, 12, 26, "Message",ExpressionUUID->"83af5efb-ad2d-46d7-888d-898e262f0fa8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25329, 524, 428, 11, 42, "Input",ExpressionUUID->"9f3a4e93-fec1-4b42-9d8e-2816e9fbad7c"],
+Cell[25760, 537, 28789, 537, 5466, "Output",ExpressionUUID->"a73298a0-fbb5-4af2-9ef0-a8d5c798290a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54586, 1079, 463, 11, 42, "Input",ExpressionUUID->"48534b6f-e585-4218-9953-60dcf80f6691"],
+Cell[55052, 1092, 537, 12, 26, "Message",ExpressionUUID->"926406d3-66d2-44ed-a38a-2f94fe5d3f28"],
+Cell[55592, 1106, 537, 12, 26, "Message",ExpressionUUID->"c18eb31f-ff52-4014-a1c4-f3131b9094d7"],
+Cell[56132, 1120, 537, 12, 26, "Message",ExpressionUUID->"aae31d0f-e953-45ed-bd2c-e78fcbafb388"],
+Cell[56672, 1134, 565, 12, 26, "Message",ExpressionUUID->"5e60aa06-e5e8-49d6-bb5f-7005b5edd9be"],
+Cell[57240, 1148, 28015, 521, 5344, "Output",ExpressionUUID->"cfde0da0-e3f4-4520-b197-dab635492434"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
