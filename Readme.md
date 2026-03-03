@@ -54,7 +54,7 @@ https://kadai-my.sharepoint.com/:x:/r/personal/k7085637_kadai_jp/_layouts/15/doc
 
 # 今後の検討
 ## geoplot
-- tomojsonは「市」（つまりファイル）単位で緯度経度情報がある -> 1896
+- tomojsonは「市」（つまりファイル）単位で緯度経度情報がある
 ## データの拡大
 ### ドキュメントの拡大
 - リポジトリへの拡大が考えられる
