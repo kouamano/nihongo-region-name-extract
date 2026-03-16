@@ -1,0 +1,111 @@
+# 作業依頼
+
+## 概要
+科研報告書よりmecabによる地名抽出を行なった結果に対して、抽出された地名の妥当性をAIに判定させた。
+この判断が妥当かをさらに人により評価する。
+
+## マテリアル
+- Mat.A: AIへの入力ファイル
+ - ファイル名：<nn>.<aa>.txt（<nn>：数字２文字、<aa>：アルファベット2文字）
+ - 入力形式：JSON：[<大学所在県の地名リスト>,<地名リスト>,<分野>,<報告>]
+  - <大学所在県の地名リスト>：配列
+  - <地名リスト>：配列
+  - <分野>：文字列
+  - <報告>：配列
+- Mat.B: AIからの出力結果
+ - ファイル名：入力ファイル名にAI名を付与したもの
+ - 出力形式：不定（AIの出力そのまま）
+
+## 人による評価作業
+AIからの出力を以下の観点で人が評価する
+
+### 形式の評価（依頼する作業その１）
+プロンプトでは編集した第２要素（<地名リスト>）のみを出力する指示となっている
+- 対象：Mat.B
+- 人はこの出力形式を以下の観点で評価する
+ - A. JSON部分が抽出容易か：ワンライナーもしくはクオーティングされている（0/1）
+ - B. JSON部分が指示通り第２要素のみか（0/1）
+ - C. 上記以外の場合のJSON部分の形式の多様性
+  - 全要素（0）
+  - 第２要素と他の要素を含む（1）
+  - 第２要素と他の要素を含が、省略されている（2）
+  - 第２要素すら不完全（3）
+ - 結果の記述：別途提供するエクセルへの記載
+
+### 人による再判定（依頼する作業その２）
+人による判定をAI向けプロンプトに従ってに行う
+- 対象：Mat.A
+- 人は自身の判定結果を第２要素のみのJSONとして記述する、なお記述方針は以下である：
+ - 1判定/1ファイル
+ - ファイル名は元ファイル名に対して".h"拡張子を付与したものとする（<nn>.<aa>.txt.h）
+ - 文字コードはUTF-8、改行はLFとする
+
+## 参考
+
+### AI用プロンプト
+```
+添付のデータに対して以下の作業を行って下さい。
+
+- 概要: 地名候補を地名であるか判定する。
+- 入力データ形式: json形式、4つの配列要素から成る。
+- 入力データの各要素の説明: 
+  - 第1要素: 無視して良い
+  - 第2要素: 第4要素から抽出された地名候補
+  - 第3要素: 無視して良い
+  - 第4要素: 文章
+- 行ってほしい作業: jsonの第2要素の各地名候補が地名であるかを、第4要素の文脈から判定してほしい。
+- 出力データ形式（判定結果）: 第2要素のみを次のように出力する: 第2要素の地名候補が地名であればそのまま残し、そうでない場合は0に置きかえたもの。
+```
+
+### AI出力
+- 例1
+~~~
+```json
+[["徳島",0,0,0,0,0],["徳島","東日本","東日本","東日本","仙台","宮城"],["徳島",0,0,0,0,0],["ジェットエンジン型超高温MOVPEによる低転位AlN成長",0,0,0,0,0],["徳島",0,0,0,0,0],["熱流体シミュレーションを用いて高温での成長原料の反応を予想し、ジェットエンジンの機構を模倣した超高温結晶成長装置の開発を行い、深紫外LEDの下地層であるAlN高品質化について検討を行った。具体的には、熱流体シミュレーションにより気相反応という成長原料を輸送中に発生する反応が本手法で抑制できることがわかり、この条件での実際の結晶成長においても気相反応が抑制されていることが分かった。本手法により従来の結晶成長装置では実現することが難しい1500℃以上の成長温度でAlNの結晶成長を実現した。AlNの結晶成長における高温成長の優位性を確認した。",0,0,0,0,0]]
+```
+
+**解説:**
+
+*   **第2要素の地名候補の判定:**
+    *   「徳島」は地名であるため、そのまま残しています。
+    *   「東日本」は地名ではなく、地域を示す言葉であるため、0に置き換えています。
+    *   「ジェットエンジン型超高温MOVPEによる低転位AlN成長」「熱流体シミュレーションを用いて高温での成長原料の反応を予想し、ジェットエンジンの機構を模倣した超高温結晶成長装置の開発を行い、深紫外LEDの下地層であるAlN高品質化について検討を行った。具体的には、熱流体シミュレーションにより気相反応という成長原料を輸送中に発生する反応が本手法で抑制できることがわかり、この条件での実際の結晶成長においても気相反応が抑制されていることが分かった。本手法により従来の結晶成長装置では実現することが難しい1500℃以上の成長温度でAlNの結晶成長を実現した。AlNの結晶成長における高温成長の優位性を確認した。」は文章であり、地名ではないため、すべて0に置き換えています。
+
+**出力形式:**　JSON形式で上記の判定結果を出力しました。
+
+
+~~~
+
+- 例2
+~~~
+Thinking...
+Okay, let's see. I need to determine if the place name candidates in the second element of the JSON are actual place names based on the context provided in the fourth element. The input is a JSON array with four elements. The first and third can be ignored. The second element is an array of potential place names, and the fourth is the text where these candidates were extracted from.
+
+First, let's look at the second element: ["日本","英","米","中国","中国","ヨーロッパ"]. These are the candidates. The fourth element is the text: "近代エキゾティシズムの総合的研究...". I need to check each candidate to see if they are actual place names in the context.
+
+Starting with "日本" (Japan). The text mentions "東洋史、日本史" which directly refers to Japan's history. So "日本" is definitely a place name here.
+
+Next is "英" (England or British). The text says "西洋史、東洋史、日本史、英米文学..." Here, "英米" refers to England and America, but "英" alone is part of "英米". However, "英" by itself is a valid country name (Britain/UK). So in the context, it's part of a compound term but still refers to a country. So maybe it's a valid place name.
+
+Then "米" (America/US). Similarly to "英", "米" is part of "英米" (England and America). "米" alone can refer to the United States. So in the context, it's part of a compound, but as a standalone, it's a valid country name.
+
+Next is "中国" (China). The text mentions "中国文学" and "中国庭園". So "中国" is clearly a country here. Even though it appears twice in the candidates, both instances should be valid.
+
+Lastly, "ヨーロッパ" (Europe). The text doesn't explicitly mention Europe, but given the context of "西洋史" (Western history) and terms like "ヨーロッパの人々" (people of Europe) in the example about Chinese gardens influencing Europe, "ヨーロッパ" is a valid continent name.
+
+Now, I need to check if each candidate is indeed a place name in the context. All of them except maybe "英" and "米" when standalone. However, in Japanese, "英" and "米" are commonly used as abbreviations for England and America, especially in academic contexts like "英米文学" (Anglo-American literature). So even though they are parts of compounds, their standalone use here still refers to countries. Therefore, all candidates are valid place names in this context. So the output should retain all of them, replacing non-place names with 0. But according to the analysis, all are valid. Wait, but the example given in the problem has "ヨーロッパ" as a candidate. The text does mention "ヨーロッパの人々", so that's valid. Therefore, all entries in the second element are place names. So the output array should be the same as the input second element, with no zeros.
+...done thinking.
+
+[[0,"英","米",0,0,0],["日本","英","米","中国","中国","ヨーロッパ"],0,["近代エキゾティシズムの総合的研究",...]]
+
+判定結果:
+["日本","英","米","中国","中国","ヨーロッパ"]
+
+すべての地名候補が文脈上地名として成立しています。
+- 日本（日本史）
+- 英（英米文学）
+- 米（英米文学）
+- 中国（中国文学・中国庭園）
+- ヨーロッパ（ヨーロッパの人々）
+
+~~~
