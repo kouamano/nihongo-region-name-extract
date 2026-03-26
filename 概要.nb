@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    220552,       3488]
-NotebookOptionsPosition[    217444,       3438]
-NotebookOutlinePosition[    217942,       3456]
-CellTagsIndexPosition[    217899,       3453]
+NotebookDataLength[    220529,       3488]
+NotebookOptionsPosition[    217421,       3438]
+NotebookOutlinePosition[    217920,       3456]
+CellTagsIndexPosition[    217877,       3453]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3024,6 +3024,10 @@ Cell["", "PageBreak",
 
 Cell["\<\
 \:4f5c\:696d\:ff1a
+\[FilledVerySmallSquare]\:fe0f0
+\:4f5c\:696d\:74b0\:5883
+\:30fb\:4f5c\:696d\:30c7\:30a3\:30ec\:30af\:30c8\:30ea@macstudioM4\:ff1a/\
+Volumes/LaCie/BANK/_KAKEN/
 \[FilledVerySmallSquare]\:fe0f1~2
 \:30fb\:51e6\:7406\:306e\:30d9\:30fc\:30b9\:3068\:306a\:308bnb\:3092\:4f5c\
 \:6210:  exec_command/Id01_univ-awdlist-tokenize2-regional.method.nb
@@ -3072,8 +3076,7 @@ All_univ-awlist-tokenize2-count.nb
 \:3000\:30fb\:76ee\:7684\:ff1a\:5730\:540d\:3068\:3057\:3066\:62bd\:51fa\:3055\
 \:308c\:305f\:5358\:8a9e\:304c\:59a5\:5f53\:3067\:3042\:308b\:304b\:3001\:5831\
 \:544a\:5185\:5bb9\:3088\:308a\:5224\:5b9a\:3059\:308b
-\:3000\:30fb\:5bfe\:8c61\:ff1a/Volumes/share/BANK/localization/kokuritsu-\
-daigaku/20250714_KAKEN/test/data/*txt
+\:3000\:30fb\:5bfe\:8c61\:ff1akokuritsu-daigaku/20250714_KAKEN/test/data/*txt
 \:3000\:3000\:30fb\:5165\:529b\:5f62\:5f0f\:ff1aJSON\:ff1a[<\:5927\:5b66\:6240\
 \:5728\:770c\:306e\:5730\:540d\:30ea\:30b9\:30c8>,<\:5730\:540d\:30ea\:30b9\
 \:30c8>,<\:5206\:91ce>,<\:5831\:544a>]
@@ -3085,8 +3088,8 @@ daigaku/20250714_KAKEN/test/data/*txt
 \:3000\:30fb\:5b9f\:884c\:ff1atest\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:3067 \
 bash gemma3-exec-list \:ff08\:4ed6 llama3-exec-list,qwen3-exec-list\:ff09\
 \:3092\:5b9f\:884c
-\:3000\:30fb\:7d50\:679c\:51fa\:529b\:ff08750\:4ef6\:ff09\:ff1a/Volumes/share/\
-BANK/localization/kokuritsu-daigaku/20250714_KAKEN/test/out/
+\:3000\:30fb\:7d50\:679c\:51fa\:529b\:ff08750\:4ef6\:ff09\:ff1akokuritsu-\
+daigaku/20250714_KAKEN/test/out/
 \:3000\:30fb\:30d5\:30a1\:30a4\:30eb\:306e\:5bfe\:5fdc\:ff1a\:5bfe\:8c61\:30d5\
 \:30a1\:30a4\:30eb:<nn>.<aa>.txt \:306b\:5bfe\:3057 \:51fa\:529b\:30d5\:30a1\
 \:30a4\:30eb:<nn>.<aa>.txt.<ai-name>
@@ -3109,9 +3112,8 @@ BANK/localization/kokuritsu-daigaku/20250714_KAKEN/test/out/
 \:7d20\:3092\:542b\:3080
 \:3000\:3000\:3000\:3000\:30fb\:7b2c\:ff12\:8981\:7d20\:3068\:4ed6\:306e\:8981\
 \:7d20\:3092\:542b\:304c\:3001\:7701\:7565\:3055\:308c\:3066\:3044\:308b
-\:3000\:3000\:3000\:30fb\:8a55\:4fa1\:7d50\:679c\:ff1a/Volumes/share/BANK/\
-localization/kokuritsu-daigaku/20250714_KAKEN/test/\:8a55\:4fa1<AI\:540d>.\
-xlsx
+\:3000\:3000\:3000\:30fb\:8a55\:4fa1\:7d50\:679c\:ff1akokuritsu-daigaku/\
+20250714_KAKEN/test/\:8a55\:4fa1<AI\:540d>.xlsx
 \:3000\:3000\:30fb\:5224\:5b9a\:5185\:5bb9\:306e\:8a55\:4fa1\:ff08\:4eba\:306b\
 \:3088\:308b\:518d\:5224\:5b9a\:ff09\:ff1a
 \:3000\:3000\:3000\:30fb\:4eba\:306b\:3088\:308b\:5224\:5b9a\:3092AI\:5411\
@@ -3126,22 +3128,18 @@ xlsx
 \:306e\:3068\:3059\:308b\:ff08<nn>.<aa>.txt.h\:ff09
 \:3000\:3000\:3000\:30fbAI\:306e\:5224\:5b9a\:7d50\:679c\:3068\:6bd4\:8f03\
 \:3059\:308b\:ff08\:30d7\:30ed\:30b0\:30e9\:30e0\:ff09
-\:3000\:3000\:3000\:30fb\:8a55\:4fa1\:7d50\:679c\:ff1a/Volumes/share/BANK/\
-localization/kokuritsu-daigaku/20250714_KAKEN/test/data.eval<\:4eba\:540d>/<\
-nn>.<aa>.txt.h
+\:3000\:3000\:3000\:30fb\:8a55\:4fa1\:7d50\:679c\:ff1akokuritsu-daigaku/\
+20250714_KAKEN/test/data.eval<\:4eba\:540d>/<nn>.<aa>.txt.h
 \[FilledVerySmallSquare]\:fe0f4.1 \:4f5c\:696d\:4f9d\:983c
-\:30fb\:4f5c\:696d\:5206\:62c5\:ff1a/Volumes/LaCie/BANK/_KAKEN/\:4f5c\:696d\
-\:5206\:696d.txt
-\:30fb\:4f9d\:983c\:6587\:ff1a/Volumes/LaCie/BANK/_KAKEN/\:4f5c\:696d\:4f9d\
-\:983c.txt
-\:30fb\:5224\:5b9a\:7d50\:679c\:8a18\:5165\:30d5\:30a1\:30a4\:30eb\:ff1a/\
-Volumes/share/BANK/localization/kokuritsu-daigaku/20250714_KAKEN/test/{\:8a55\
-\:4fa1gemma3.xlsx,\:8a55\:4fa1llama3.xlsx,\:8a55\:4fa1qwen3.xlsx}
-\:30fb\:5165\:529b\:30d5\:30a1\:30a4\:30eb\:ff1a/Volumes/share/BANK/\
-localization/kokuritsu-daigaku/20250714_KAKEN/test/data.tgz
-\:30fbAI\:51fa\:529b\:30d5\:30a1\:30a4\:30eb\:ff1a/Volumes/share/BANK/\
-localization/kokuritsu-daigaku/20250714_KAKEN/test/{out.gemma3.tgz,out.llama3.\
-tgz,out.qwen3.tgz}
+\:30fb\:4f5c\:696d\:5206\:62c5\:ff1a\:4f5c\:696d\:5206\:62c5.txt
+\:30fb\:4f9d\:983c\:6587\:ff1a\:4f5c\:696d\:4f9d\:983c.txt
+\:30fb\:5224\:5b9a\:7d50\:679c\:8a18\:5165\:30d5\:30a1\:30a4\:30eb\:ff1a\
+kokuritsu-daigaku/20250714_KAKEN/test/{\:8a55\:4fa1gemma3.xlsx,\:8a55\:4fa1\
+llama3.xlsx,\:8a55\:4fa1qwen3.xlsx}
+\:30fb\:5165\:529b\:30d5\:30a1\:30a4\:30eb\:ff1akokuritsu-daigaku/20250714_\
+KAKEN/test/data.tgz
+\:30fbAI\:51fa\:529b\:30d5\:30a1\:30a4\:30eb\:ff1akokuritsu-daigaku/20250714_\
+KAKEN/test/{out.gemma3.tgz,out.llama3.tgz,out.qwen3.tgz}
 \:30fb\:5224\:5b9a\:57fa\:6e96\:306b\:3064\:3044\:3066
 \:3000\:30fb\:5730\:540d\:3068\:3057\:306a\:3044\:3082\:306e
 \:3000\:3000\:30fb\:6b63\:3057\:304f\:62bd\:51fa\:3055\:308c\:306a\:304b\:3063\
@@ -3169,8 +3167,8 @@ tgz,out.qwen3.tgz}
 \:306e\:306f\:5730\:540d\:3068\:3059\:308b
 \[FilledVerySmallSquare]\:fe0f4.2 JSON\:90e8\:5206\:306e\:62bd\:51fa
 \:30fbAI\:306e\:51fa\:529b\:306b\:6b63\:3057\:3044JSON\:304c\:542b\:307e\:308c\
-\:308b\:304b\:3092\:5224\:5b9a\:ff08/Volumes/share/BANK/localization/\
-kokuritsu-daigaku/20250714_KAKEN/test/<nn>.<aa>.txt.<AI\:540d>\:ff09
+\:308b\:304b\:3092\:5224\:5b9a\:ff08kokuritsu-daigaku/20250714_KAKEN/test/<nn>\
+.<aa>.txt.<AI\:540d>\:ff09
 \:30fb\:5224\:5b9a\:304c\:3001\[CloseCurlyDoubleQuote]1,1,\
 \[CloseCurlyDoubleQuote]\:3001\[CloseCurlyDoubleQuote]1,0,0\
 \[CloseCurlyDoubleQuote]\:3001\[CloseCurlyDoubleQuote]1,0,1\
@@ -3252,7 +3250,9 @@ kokuritsu-daigaku/20250714_KAKEN/test/<nn>.<aa>.txt.<AI\:540d>\:ff09
    3.983470702888126*^9, 3.983470777995998*^9}, {3.9834708104711933`*^9, 
    3.983470855739283*^9}, {3.983472101419407*^9, 3.9834721489625607`*^9}, {
    3.983472328833577*^9, 3.98347233789007*^9}, {3.98347237856075*^9, 
-   3.983472697586006*^9}},ExpressionUUID->"7db3e612-fe69-46da-827b-\
+   3.983472697586006*^9}, {3.983474542447097*^9, 3.983474592448737*^9}, {
+   3.983474622904587*^9, 3.9834747306644087`*^9}, {3.983474761598386*^9, 
+   3.983474857049931*^9}},ExpressionUUID->"7db3e612-fe69-46da-827b-\
 d447a13f6558"],
 
 Cell["\<\
@@ -3436,8 +3436,8 @@ https://doi.org/10.1093/reseval/rvaf040\
 63217ccb306a"]
 }, Open  ]]
 },
-WindowSize->{955, 911},
-WindowMargins->{{22, Automatic}, {Automatic, 0}},
+WindowSize->{1173, 911},
+WindowMargins->{{30, Automatic}, {Automatic, 0}},
 Magnification:>0.75 Inherited,
 FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (2025\:5e747\:67088\:65e5)",
 StyleDefinitions->FrontEnd`FileName[{"SlideShow"}, "Opal.nb", 
@@ -3475,20 +3475,20 @@ Cell[190965, 2998, 376, 8, 65, "Text",ExpressionUUID->"801de1b3-aa84-4354-9b0c-0
 Cell[191344, 3008, 633, 11, 111, "Text",ExpressionUUID->"ec26c0a0-a15f-4d21-a533-6bd429197688"],
 Cell[191980, 3021, 99, 1, 3, "PageBreak",ExpressionUUID->"848d1f79-6b9c-42db-a66c-2bc7ae5432bf",
  PageBreakBelow->True],
-Cell[192082, 3024, 14850, 231, 2151, "Text",ExpressionUUID->"7db3e612-fe69-46da-827b-d447a13f6558"],
-Cell[206935, 3257, 1335, 23, 133, "Text",ExpressionUUID->"9b122637-9fa0-47ce-bfa8-1e26efa64d3f"],
-Cell[208273, 3282, 99, 1, 3, "PageBreak",ExpressionUUID->"a82acc9b-afd1-4218-a285-63905edbeb55",
+Cell[192082, 3024, 14827, 231, 1999, "Text",ExpressionUUID->"7db3e612-fe69-46da-827b-d447a13f6558"],
+Cell[206912, 3257, 1335, 23, 133, "Text",ExpressionUUID->"9b122637-9fa0-47ce-bfa8-1e26efa64d3f"],
+Cell[208250, 3282, 99, 1, 3, "PageBreak",ExpressionUUID->"a82acc9b-afd1-4218-a285-63905edbeb55",
  PageBreakBelow->True],
-Cell[208375, 3285, 154, 3, 42, "Text",ExpressionUUID->"b7b63416-4f28-4dae-9931-61abb15a377a"],
-Cell[208532, 3290, 407, 9, 111, "Text",ExpressionUUID->"6d9bfb2b-4895-416e-9a5b-42123045befb"],
-Cell[208942, 3301, 3909, 54, 247, "Text",ExpressionUUID->"7fa51f97-b7d9-4d09-ac88-db3002aa2d0d"],
+Cell[208352, 3285, 154, 3, 42, "Text",ExpressionUUID->"b7b63416-4f28-4dae-9931-61abb15a377a"],
+Cell[208509, 3290, 407, 9, 111, "Text",ExpressionUUID->"6d9bfb2b-4895-416e-9a5b-42123045befb"],
+Cell[208919, 3301, 3909, 54, 201, "Text",ExpressionUUID->"7fa51f97-b7d9-4d09-ac88-db3002aa2d0d"],
 Cell[CellGroupData[{
-Cell[212876, 3359, 2979, 39, 268, "Input",ExpressionUUID->"2fdbdf0b-cba5-4e82-9e95-973a2932a3a6"],
-Cell[215858, 3400, 315, 4, 35, "Output",ExpressionUUID->"bae3278f-0615-4ace-a94c-8e7a7f1496a7"]
+Cell[212853, 3359, 2979, 39, 221, "Input",ExpressionUUID->"2fdbdf0b-cba5-4e82-9e95-973a2932a3a6"],
+Cell[215835, 3400, 315, 4, 35, "Output",ExpressionUUID->"bae3278f-0615-4ace-a94c-8e7a7f1496a7"]
 }, Open  ]],
-Cell[216188, 3407, 174, 3, 42, "Text",ExpressionUUID->"d974a3f6-8e7d-48fa-95b3-912dffc8c6c4"],
-Cell[216365, 3412, 496, 10, 65, "Item",ExpressionUUID->"96b5495c-6f14-4bae-a47b-7cc2986d2183"],
-Cell[216864, 3424, 564, 11, 111, "Item",ExpressionUUID->"fbce9279-a3d7-42ec-8a07-63217ccb306a"]
+Cell[216165, 3407, 174, 3, 42, "Text",ExpressionUUID->"d974a3f6-8e7d-48fa-95b3-912dffc8c6c4"],
+Cell[216342, 3412, 496, 10, 65, "Item",ExpressionUUID->"96b5495c-6f14-4bae-a47b-7cc2986d2183"],
+Cell[216841, 3424, 564, 11, 88, "Item",ExpressionUUID->"fbce9279-a3d7-42ec-8a07-63217ccb306a"]
 }, Open  ]]
 }
 ]
