@@ -1,0 +1,620 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     28092,        612]
+NotebookOptionsPosition[     24425,        535]
+NotebookOutlinePosition[     24829,        551]
+CellTagsIndexPosition[     24786,        548]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Valid JSON files from AI", "Title",
+ CellChangeTimes->{{3.98356384264007*^9, 
+  3.983563874122052*^9}},ExpressionUUID->"da28dba6-a350-4bc5-a329-\
+4ec4d39d89e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"datadir", 
+  "=", "\"\</Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/test/\
+\>\""}]], "Input",
+ CellChangeTimes->{{3.983564023098323*^9, 3.9835640350292397`*^9}, {
+  3.983564123111154*^9, 3.983564131749361*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"abe3f556-fc65-4c3b-8f51-b72b4a31057e"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\
+test/\"\>"], "Output",
+ CellChangeTimes->{3.983564035709578*^9, 3.983564132994564*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"deb699c3-6d44-42e3-b8f5-c9012577150f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["jemma3", "Section",
+ CellChangeTimes->{{3.983563894420223*^9, 
+  3.9835639063022327`*^9}},ExpressionUUID->"17bbe77b-4888-405f-8410-\
+cdef91088a1a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"gemma3XLS", "=", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"datadir", "<>", "\"\<\:8a55\:4fa1gemma3.xlsx\>\""}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.983564038878853*^9, 3.9835640411201763`*^9}, {
+  3.983564167450488*^9, 3.983564261232812*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"c776a1e4-c14b-47cf-9e84-ce78d2b88ea4"],
+
+Cell[BoxData["251"], "Output",
+ CellChangeTimes->{
+  3.983564185064044*^9, {3.983564246331912*^9, 3.9835642626134253`*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"26cc9693-5022-4408-a34e-12897a422705"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"gemma3validline", "=", 
+    RowBox[{"Cases", "[", 
+     RowBox[{"gemma3XLS", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_", ",", "x_", ",", "y_", ",", "z_", ",", "___"}], "}"}], "/;", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "1."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "0."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "1."}]}], ")"}]}]}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.9835643360673437`*^9, 3.9835643377604113`*^9}, {
+  3.983564378351108*^9, 3.983564408409554*^9}, {3.983564442581072*^9, 
+  3.983564664656413*^9}, {3.983564696785441*^9, 3.983564724012429*^9}, {
+  3.983565122881078*^9, 3.9835651357953444`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"ed0c5fed-9fba-4840-8535-07b88425b6b0"],
+
+Cell[BoxData["152"], "Output",
+ CellChangeTimes->{3.983565136886375*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"236ebc3d-b554-416f-a649-fe240dce6272"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gemma3validfile", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "&"}], ",", "gemma3validline"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.983564738830879*^9, 3.983564760147921*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"04ddcdc5-54fd-4fa6-b53f-fac1aec0fab8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"36.aa.txt.gemma3\"\>", ",", "\<\"36.ab.txt.gemma3\"\>", 
+   ",", "\<\"36.ac.txt.gemma3\"\>", ",", "\<\"36.ad.txt.gemma3\"\>", 
+   ",", "\<\"36.ae.txt.gemma3\"\>", ",", "\<\"36.af.txt.gemma3\"\>", 
+   ",", "\<\"36.ag.txt.gemma3\"\>", ",", "\<\"36.ah.txt.gemma3\"\>", 
+   ",", "\<\"36.ai.txt.gemma3\"\>", ",", "\<\"36.aj.txt.gemma3\"\>", 
+   ",", "\<\"36.ak.txt.gemma3\"\>", ",", "\<\"36.am.txt.gemma3\"\>", 
+   ",", "\<\"36.an.txt.gemma3\"\>", ",", "\<\"36.ap.txt.gemma3\"\>", 
+   ",", "\<\"36.aq.txt.gemma3\"\>", ",", "\<\"36.as.txt.gemma3\"\>", 
+   ",", "\<\"36.au.txt.gemma3\"\>", ",", "\<\"36.av.txt.gemma3\"\>", 
+   ",", "\<\"36.aw.txt.gemma3\"\>", ",", "\<\"36.ax.txt.gemma3\"\>", 
+   ",", "\<\"36.az.txt.gemma3\"\>", ",", "\<\"36.ba.txt.gemma3\"\>", 
+   ",", "\<\"36.bb.txt.gemma3\"\>", ",", "\<\"36.bc.txt.gemma3\"\>", 
+   ",", "\<\"36.bd.txt.gemma3\"\>", ",", "\<\"36.be.txt.gemma3\"\>", 
+   ",", "\<\"36.bf.txt.gemma3\"\>", ",", "\<\"36.bg.txt.gemma3\"\>", 
+   ",", "\<\"36.bh.txt.gemma3\"\>", ",", "\<\"36.bi.txt.gemma3\"\>", 
+   ",", "\<\"36.bj.txt.gemma3\"\>", ",", "\<\"36.bk.txt.gemma3\"\>", 
+   ",", "\<\"36.bl.txt.gemma3\"\>", ",", "\<\"36.bp.txt.gemma3\"\>", 
+   ",", "\<\"36.bq.txt.gemma3\"\>", ",", "\<\"36.bs.txt.gemma3\"\>", 
+   ",", "\<\"36.bt.txt.gemma3\"\>", ",", "\<\"36.bu.txt.gemma3\"\>", 
+   ",", "\<\"36.bw.txt.gemma3\"\>", ",", "\<\"41.aa.txt.gemma3\"\>", 
+   ",", "\<\"41.ab.txt.gemma3\"\>", ",", "\<\"41.ac.txt.gemma3\"\>", 
+   ",", "\<\"41.af.txt.gemma3\"\>", ",", "\<\"41.ag.txt.gemma3\"\>", 
+   ",", "\<\"41.ah.txt.gemma3\"\>", ",", "\<\"41.ai.txt.gemma3\"\>", 
+   ",", "\<\"41.ak.txt.gemma3\"\>", ",", "\<\"41.an.txt.gemma3\"\>", 
+   ",", "\<\"41.ar.txt.gemma3\"\>", ",", "\<\"41.at.txt.gemma3\"\>", 
+   ",", "\<\"41.au.txt.gemma3\"\>", ",", "\<\"41.av.txt.gemma3\"\>", 
+   ",", "\<\"41.ay.txt.gemma3\"\>", ",", "\<\"41.ba.txt.gemma3\"\>", 
+   ",", "\<\"41.bd.txt.gemma3\"\>", ",", "\<\"41.be.txt.gemma3\"\>", 
+   ",", "\<\"41.bf.txt.gemma3\"\>", ",", "\<\"41.bg.txt.gemma3\"\>", 
+   ",", "\<\"41.bh.txt.gemma3\"\>", ",", "\<\"41.bi.txt.gemma3\"\>", 
+   ",", "\<\"41.bk.txt.gemma3\"\>", ",", "\<\"41.bl.txt.gemma3\"\>", 
+   ",", "\<\"41.bp.txt.gemma3\"\>", ",", "\<\"41.bq.txt.gemma3\"\>", 
+   ",", "\<\"41.br.txt.gemma3\"\>", ",", "\<\"41.bs.txt.gemma3\"\>", 
+   ",", "\<\"41.bt.txt.gemma3\"\>", ",", "\<\"41.bu.txt.gemma3\"\>", 
+   ",", "\<\"41.bv.txt.gemma3\"\>", ",", "\<\"41.bw.txt.gemma3\"\>", 
+   ",", "\<\"52.ac.txt.gemma3\"\>", ",", "\<\"52.ad.txt.gemma3\"\>", 
+   ",", "\<\"52.ae.txt.gemma3\"\>", ",", "\<\"52.af.txt.gemma3\"\>", 
+   ",", "\<\"52.ag.txt.gemma3\"\>", ",", "\<\"52.ah.txt.gemma3\"\>", 
+   ",", "\<\"52.ai.txt.gemma3\"\>", ",", "\<\"52.aj.txt.gemma3\"\>", 
+   ",", "\<\"52.ak.txt.gemma3\"\>", ",", "\<\"52.am.txt.gemma3\"\>", 
+   ",", "\<\"52.an.txt.gemma3\"\>", ",", "\<\"52.ao.txt.gemma3\"\>", 
+   ",", "\<\"52.ar.txt.gemma3\"\>", ",", "\<\"52.as.txt.gemma3\"\>", 
+   ",", "\<\"52.at.txt.gemma3\"\>", ",", "\<\"52.au.txt.gemma3\"\>", 
+   ",", "\<\"52.av.txt.gemma3\"\>", ",", "\<\"52.ay.txt.gemma3\"\>", 
+   ",", "\<\"52.az.txt.gemma3\"\>", ",", "\<\"52.ba.txt.gemma3\"\>", 
+   ",", "\<\"52.bb.txt.gemma3\"\>", ",", "\<\"52.bd.txt.gemma3\"\>", 
+   ",", "\<\"52.be.txt.gemma3\"\>", ",", "\<\"52.bf.txt.gemma3\"\>", 
+   ",", "\<\"52.bg.txt.gemma3\"\>", ",", "\<\"52.bh.txt.gemma3\"\>", 
+   ",", "\<\"52.bk.txt.gemma3\"\>", ",", "\<\"52.bl.txt.gemma3\"\>", 
+   ",", "\<\"52.bn.txt.gemma3\"\>", ",", "\<\"52.bo.txt.gemma3\"\>", 
+   ",", "\<\"52.bp.txt.gemma3\"\>", ",", "\<\"52.bq.txt.gemma3\"\>", 
+   ",", "\<\"52.br.txt.gemma3\"\>", ",", "\<\"52.bs.txt.gemma3\"\>", 
+   ",", "\<\"52.bt.txt.gemma3\"\>", ",", "\<\"52.bv.txt.gemma3\"\>", 
+   ",", "\<\"52.bw.txt.gemma3\"\>", ",", "\<\"52.bx.txt.gemma3\"\>", 
+   ",", "\<\"76.aa.txt.gemma3\"\>", ",", "\<\"76.ab.txt.gemma3\"\>", 
+   ",", "\<\"76.ac.txt.gemma3\"\>", ",", "\<\"76.ad.txt.gemma3\"\>", 
+   ",", "\<\"76.ae.txt.gemma3\"\>", ",", "\<\"76.af.txt.gemma3\"\>", 
+   ",", "\<\"76.ag.txt.gemma3\"\>", ",", "\<\"76.ah.txt.gemma3\"\>", 
+   ",", "\<\"76.ai.txt.gemma3\"\>", ",", "\<\"76.aj.txt.gemma3\"\>", 
+   ",", "\<\"76.ak.txt.gemma3\"\>", ",", "\<\"76.al.txt.gemma3\"\>", 
+   ",", "\<\"76.am.txt.gemma3\"\>", ",", "\<\"76.ao.txt.gemma3\"\>", 
+   ",", "\<\"76.ap.txt.gemma3\"\>", ",", "\<\"76.aq.txt.gemma3\"\>", 
+   ",", "\<\"76.ar.txt.gemma3\"\>", ",", "\<\"76.as.txt.gemma3\"\>", 
+   ",", "\<\"76.au.txt.gemma3\"\>", ",", "\<\"76.av.txt.gemma3\"\>", 
+   ",", "\<\"76.aw.txt.gemma3\"\>", ",", "\<\"76.ax.txt.gemma3\"\>", 
+   ",", "\<\"76.ay.txt.gemma3\"\>", ",", "\<\"76.az.txt.gemma3\"\>", 
+   ",", "\<\"76.ba.txt.gemma3\"\>", ",", "\<\"76.bc.txt.gemma3\"\>", 
+   ",", "\<\"76.bd.txt.gemma3\"\>", ",", "\<\"76.be.txt.gemma3\"\>", 
+   ",", "\<\"76.bf.txt.gemma3\"\>", ",", "\<\"76.bg.txt.gemma3\"\>", 
+   ",", "\<\"76.bh.txt.gemma3\"\>", ",", "\<\"76.bi.txt.gemma3\"\>", 
+   ",", "\<\"76.bj.txt.gemma3\"\>", ",", "\<\"76.bk.txt.gemma3\"\>", 
+   ",", "\<\"76.bl.txt.gemma3\"\>", ",", "\<\"76.bm.txt.gemma3\"\>", 
+   ",", "\<\"76.bp.txt.gemma3\"\>", ",", "\<\"76.bq.txt.gemma3\"\>", 
+   ",", "\<\"76.br.txt.gemma3\"\>", ",", "\<\"76.bs.txt.gemma3\"\>", 
+   ",", "\<\"76.bt.txt.gemma3\"\>", ",", "\<\"76.bu.txt.gemma3\"\>", 
+   ",", "\<\"76.bw.txt.gemma3\"\>", ",", "\<\"76.bx.txt.gemma3\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.983564761119186*^9, 3.983565141200313*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"14bdaa35-ac08-4dcc-a609-f6ad724b4c1b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"datadir", "<>", "\"\<gemma3validfile.csv\>\""}], ",", 
+   "gemma3validfile", ",", "\"\<CSV\>\"", ",", " ", 
+   RowBox[{"\"\<QuotingCharacter\>\"", "->", "\"\<\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.983564804007833*^9, 3.983564835539773*^9}, {
+  3.9835649638811483`*^9, 3.9835649696387377`*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"53e0495a-7535-4082-949f-a6e1982f00a7"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\
+test/gemma3validfile.csv\"\>"], "Output",
+ CellChangeTimes->{3.9835648384815073`*^9, 3.9835649704957533`*^9, 
+  3.98356514561734*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"0c096861-478d-4a3f-b7dd-85bdaeeb7b66"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["llama3", "Section",
+ CellChangeTimes->{{3.983563894420223*^9, 
+  3.9835639329539013`*^9}},ExpressionUUID->"1c99c317-b927-4b2f-a9fc-\
+fcdb3474cf68"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"llama3XLS", "=", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"datadir", "<>", "\"\<\:8a55\:4fa1llama3.xlsx\>\""}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.983564038878853*^9, 3.9835640411201763`*^9}, {
+  3.983564167450488*^9, 3.98356428412219*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"3c1913b0-d524-4023-bb51-49e0ea844320"],
+
+Cell[BoxData["251"], "Output",
+ CellChangeTimes->{3.98356428517092*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"bb189cda-c478-4cf0-9537-4d180c7f7ac4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"llama3validline", "=", 
+    RowBox[{"Cases", "[", 
+     RowBox[{"llama3XLS", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_", ",", "x_", ",", "y_", ",", "z_", ",", "___"}], "}"}], "/;", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "1."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "0."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "1."}]}], ")"}]}]}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.9835643360673437`*^9, 3.9835643377604113`*^9}, {
+  3.983564378351108*^9, 3.983564408409554*^9}, {3.983564442581072*^9, 
+  3.983564664656413*^9}, {3.983564696785441*^9, 3.983564724012429*^9}, {
+  3.983565017052827*^9, 3.983565043271514*^9}, {3.9835650987299232`*^9, 
+  3.983565099701665*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"5b62d0da-f0d7-4802-a7fe-dea077188cb3"],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{3.983565044233054*^9, 3.983565101120216*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"6c4ed937-e831-4690-b80a-43da27ba4813"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"llama3validfile", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "&"}], ",", "llama3validline"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.983564738830879*^9, 3.983564760147921*^9}, {
+  3.9835651803590117`*^9, 3.983565189912932*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"d478e0c2-0c03-4030-bb5a-493cc4ca4eb3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"36.aa.txt.llama3\"\>", ",", "\<\"36.ae.txt.llama3\"\>", 
+   ",", "\<\"36.ag.txt.llama3\"\>", ",", "\<\"36.aq.txt.llama3\"\>", 
+   ",", "\<\"36.bf.txt.llama3\"\>", ",", "\<\"36.bh.txt.llama3\"\>", 
+   ",", "\<\"36.bo.txt.llama3\"\>", ",", "\<\"41.ab.txt.llama3\"\>", 
+   ",", "\<\"41.ad.txt.llama3\"\>", ",", "\<\"41.bg.txt.llama3\"\>", 
+   ",", "\<\"52.bc.txt.llama3\"\>", ",", "\<\"76.ac.txt.llama3\"\>", 
+   ",", "\<\"76.ah.txt.llama3\"\>", ",", "\<\"76.an.txt.llama3\"\>", 
+   ",", "\<\"76.ay.txt.llama3\"\>", ",", "\<\"76.bh.txt.llama3\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.983565190856023*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"d6104ce4-e34b-45f9-9139-1350d9bdff4c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"datadir", "<>", "\"\<llama3validfile.csv\>\""}], ",", 
+   "llama3validfile", ",", "\"\<CSV\>\"", ",", " ", 
+   RowBox[{"\"\<QuotingCharacter\>\"", "->", "\"\<\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.983564804007833*^9, 3.983564835539773*^9}, {
+  3.9835649638811483`*^9, 3.9835649696387377`*^9}, {3.983565202828861*^9, 
+  3.98356521224717*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"6f1338c1-3ec4-4dee-849a-2b3aa59f3558"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\
+test/llama3validfile.csv\"\>"], "Output",
+ CellChangeTimes->{3.983565213352592*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"8742563b-67bf-4262-9aec-43cfddbb32de"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["qwen3", "Section",
+ CellChangeTimes->{{3.983563894420223*^9, 
+  3.983563949783165*^9}},ExpressionUUID->"10249ab7-ada1-4ee5-a66f-\
+2022083a6416"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"qwen3XLS", "=", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"datadir", "<>", "\"\<\:8a55\:4fa1qwen3.xlsx\>\""}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.983564038878853*^9, 3.9835640411201763`*^9}, {
+  3.983564167450488*^9, 3.983564261232812*^9}, {3.9835642920853777`*^9, 
+  3.983564301700251*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"c01280fd-fc74-4399-ae69-12493c99e3fc"],
+
+Cell[BoxData["251"], "Output",
+ CellChangeTimes->{3.983564302627174*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"13f5cc96-9eda-4b8e-9eff-4c0309236fb4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"qwen3validline", "=", 
+    RowBox[{"Cases", "[", 
+     RowBox[{"qwen3XLS", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_", ",", "x_", ",", "y_", ",", "z_", ",", "___"}], "}"}], "/;", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "1."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "0."}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1."}], "&&", 
+          RowBox[{"y", "==", "0."}], "&&", 
+          RowBox[{"z", "==", "1."}]}], ")"}]}]}]}], "]"}]}], ")"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.9835643360673437`*^9, 3.9835643377604113`*^9}, {
+  3.983564378351108*^9, 3.983564408409554*^9}, {3.983564442581072*^9, 
+  3.983564664656413*^9}, {3.983564696785441*^9, 3.983564724012429*^9}, {
+  3.983565017052827*^9, 3.983565043271514*^9}, {3.9835650987299232`*^9, 
+  3.983565099701665*^9}, {3.983565330135634*^9, 3.9835653417311697`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"438a4396-dcf4-4a07-93c0-0f375b625cac"],
+
+Cell[BoxData["177"], "Output",
+ CellChangeTimes->{3.983565344430863*^9},
+ CellLabel->"Out[46]=",ExpressionUUID->"bb9bb8cd-6afd-4e77-8e64-e9af7067b788"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"qwen3validfile", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "&"}], ",", "qwen3validline"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.983564738830879*^9, 3.983564760147921*^9}, {
+   3.9835651803590117`*^9, 3.983565189912932*^9}, {3.983565368249023*^9, 
+   3.983565379547638*^9}, 3.983565545661161*^9},
+ CellLabel->"In[49]:=",ExpressionUUID->"401cde94-b468-44c4-9f4a-c45dad013717"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"36.aa.txt.qwen3\"\>", ",", "\<\"36.ab.txt.qwen3\"\>", 
+   ",", "\<\"36.ac.txt.qwen3\"\>", ",", "\<\"36.ad.txt.qwen3\"\>", 
+   ",", "\<\"36.ae.txt.qwen3\"\>", ",", "\<\"36.af.txt.qwen3\"\>", 
+   ",", "\<\"36.ag.txt.qwen3\"\>", ",", "\<\"36.ah.txt.qwen3\"\>", 
+   ",", "\<\"36.ai.txt.qwen3\"\>", ",", "\<\"36.aj.txt.qwen3\"\>", 
+   ",", "\<\"36.ak.txt.qwen3\"\>", ",", "\<\"36.al.txt.qwen3\"\>", 
+   ",", "\<\"36.am.txt.qwen3\"\>", ",", "\<\"36.an.txt.qwen3\"\>", 
+   ",", "\<\"36.ao.txt.qwen3\"\>", ",", "\<\"36.aq.txt.qwen3\"\>", 
+   ",", "\<\"36.ar.txt.qwen3\"\>", ",", "\<\"36.as.txt.qwen3\"\>", 
+   ",", "\<\"36.au.txt.qwen3\"\>", ",", "\<\"36.av.txt.qwen3\"\>", 
+   ",", "\<\"36.aw.txt.qwen3\"\>", ",", "\<\"36.ax.txt.qwen3\"\>", 
+   ",", "\<\"36.ay.txt.qwen3\"\>", ",", "\<\"36.az.txt.qwen3\"\>", 
+   ",", "\<\"36.ba.txt.qwen3\"\>", ",", "\<\"36.bb.txt.qwen3\"\>", 
+   ",", "\<\"36.bc.txt.qwen3\"\>", ",", "\<\"36.be.txt.qwen3\"\>", 
+   ",", "\<\"36.bf.txt.qwen3\"\>", ",", "\<\"36.bg.txt.qwen3\"\>", 
+   ",", "\<\"36.bh.txt.qwen3\"\>", ",", "\<\"36.bi.txt.qwen3\"\>", 
+   ",", "\<\"36.bj.txt.qwen3\"\>", ",", "\<\"36.bk.txt.qwen3\"\>", 
+   ",", "\<\"36.bl.txt.qwen3\"\>", ",", "\<\"36.bm.txt.qwen3\"\>", 
+   ",", "\<\"36.bn.txt.qwen3\"\>", ",", "\<\"36.bo.txt.qwen3\"\>", 
+   ",", "\<\"36.bp.txt.qwen3\"\>", ",", "\<\"36.bq.txt.qwen3\"\>", 
+   ",", "\<\"36.br.txt.qwen3\"\>", ",", "\<\"36.bs.txt.qwen3\"\>", 
+   ",", "\<\"36.bt.txt.qwen3\"\>", ",", "\<\"36.bu.txt.qwen3\"\>", 
+   ",", "\<\"36.bv.txt.qwen3\"\>", ",", "\<\"36.bw.txt.qwen3\"\>", 
+   ",", "\<\"36.bx.txt.qwen3\"\>", ",", "\<\"41.aa.txt.qwen3\"\>", 
+   ",", "\<\"41.ab.txt.qwen3\"\>", ",", "\<\"41.ac.txt.qwen3\"\>", 
+   ",", "\<\"41.ae.txt.qwen3\"\>", ",", "\<\"41.af.txt.qwen3\"\>", 
+   ",", "\<\"41.ai.txt.qwen3\"\>", ",", "\<\"41.ak.txt.qwen3\"\>", 
+   ",", "\<\"41.al.txt.qwen3\"\>", ",", "\<\"41.am.txt.qwen3\"\>", 
+   ",", "\<\"41.an.txt.qwen3\"\>", ",", "\<\"41.ap.txt.qwen3\"\>", 
+   ",", "\<\"41.aq.txt.qwen3\"\>", ",", "\<\"41.ar.txt.qwen3\"\>", 
+   ",", "\<\"41.as.txt.qwen3\"\>", ",", "\<\"41.at.txt.qwen3\"\>", 
+   ",", "\<\"41.au.txt.qwen3\"\>", ",", "\<\"41.av.txt.qwen3\"\>", 
+   ",", "\<\"41.aw.txt.qwen3\"\>", ",", "\<\"41.ax.txt.qwen3\"\>", 
+   ",", "\<\"41.ay.txt.qwen3\"\>", ",", "\<\"41.az.txt.qwen3\"\>", 
+   ",", "\<\"41.ba.txt.qwen3\"\>", ",", "\<\"41.bb.txt.qwen3\"\>", 
+   ",", "\<\"41.be.txt.qwen3\"\>", ",", "\<\"41.bf.txt.qwen3\"\>", 
+   ",", "\<\"41.bg.txt.qwen3\"\>", ",", "\<\"41.bh.txt.qwen3\"\>", 
+   ",", "\<\"41.bi.txt.qwen3\"\>", ",", "\<\"41.bk.txt.qwen3\"\>", 
+   ",", "\<\"41.bl.txt.qwen3\"\>", ",", "\<\"41.bm.txt.qwen3\"\>", 
+   ",", "\<\"41.bn.txt.qwen3\"\>", ",", "\<\"41.bo.txt.qwen3\"\>", 
+   ",", "\<\"41.bp.txt.qwen3\"\>", ",", "\<\"41.bq.txt.qwen3\"\>", 
+   ",", "\<\"41.br.txt.qwen3\"\>", ",", "\<\"41.bt.txt.qwen3\"\>", 
+   ",", "\<\"41.bu.txt.qwen3\"\>", ",", "\<\"41.bv.txt.qwen3\"\>", 
+   ",", "\<\"41.bw.txt.qwen3\"\>", ",", "\<\"41.bx.txt.qwen3\"\>", 
+   ",", "\<\"52.aa.txt.qwen3\"\>", ",", "\<\"52.ab.txt.qwen3\"\>", 
+   ",", "\<\"52.ac.txt.qwen3\"\>", ",", "\<\"52.ad.txt.qwen3\"\>", 
+   ",", "\<\"52.ae.txt.qwen3\"\>", ",", "\<\"52.af.txt.qwen3\"\>", 
+   ",", "\<\"52.ag.txt.qwen3\"\>", ",", "\<\"52.ah.txt.qwen3\"\>", 
+   ",", "\<\"52.ai.txt.qwen3\"\>", ",", "\<\"52.aj.txt.qwen3\"\>", 
+   ",", "\<\"52.ak.txt.qwen3\"\>", ",", "\<\"52.al.txt.qwen3\"\>", 
+   ",", "\<\"52.am.txt.qwen3\"\>", ",", "\<\"52.an.txt.qwen3\"\>", 
+   ",", "\<\"52.ao.txt.qwen3\"\>", ",", "\<\"52.ap.txt.qwen3\"\>", 
+   ",", "\<\"52.aq.txt.qwen3\"\>", ",", "\<\"52.ar.txt.qwen3\"\>", 
+   ",", "\<\"52.at.txt.qwen3\"\>", ",", "\<\"52.au.txt.qwen3\"\>", 
+   ",", "\<\"52.av.txt.qwen3\"\>", ",", "\<\"52.ay.txt.qwen3\"\>", 
+   ",", "\<\"52.az.txt.qwen3\"\>", ",", "\<\"52.ba.txt.qwen3\"\>", 
+   ",", "\<\"52.bb.txt.qwen3\"\>", ",", "\<\"52.bc.txt.qwen3\"\>", 
+   ",", "\<\"52.bd.txt.qwen3\"\>", ",", "\<\"52.be.txt.qwen3\"\>", 
+   ",", "\<\"52.bf.txt.qwen3\"\>", ",", "\<\"52.bg.txt.qwen3\"\>", 
+   ",", "\<\"52.bh.txt.qwen3\"\>", ",", "\<\"52.bi.txt.qwen3\"\>", 
+   ",", "\<\"52.bj.txt.qwen3\"\>", ",", "\<\"52.bl.txt.qwen3\"\>", 
+   ",", "\<\"52.bm.txt.qwen3\"\>", ",", "\<\"52.bn.txt.qwen3\"\>", 
+   ",", "\<\"52.bo.txt.qwen3\"\>", ",", "\<\"52.bp.txt.qwen3\"\>", 
+   ",", "\<\"52.bq.txt.qwen3\"\>", ",", "\<\"52.br.txt.qwen3\"\>", 
+   ",", "\<\"52.bs.txt.qwen3\"\>", ",", "\<\"52.bt.txt.qwen3\"\>", 
+   ",", "\<\"52.bu.txt.qwen3\"\>", ",", "\<\"52.bv.txt.qwen3\"\>", 
+   ",", "\<\"52.bw.txt.qwen3\"\>", ",", "\<\"52.bx.txt.qwen3\"\>", 
+   ",", "\<\"76.aa.txt.qwen3\"\>", ",", "\<\"76.ac.txt.qwen3\"\>", 
+   ",", "\<\"76.ad.txt.qwen3\"\>", ",", "\<\"76.ae.txt.qwen3\"\>", 
+   ",", "\<\"76.ag.txt.qwen3\"\>", ",", "\<\"76.ah.txt.qwen3\"\>", 
+   ",", "\<\"76.aj.txt.qwen3\"\>", ",", "\<\"76.ak.txt.qwen3\"\>", 
+   ",", "\<\"76.al.txt.qwen3\"\>", ",", "\<\"76.am.txt.qwen3\"\>", 
+   ",", "\<\"76.an.txt.qwen3\"\>", ",", "\<\"76.ao.txt.qwen3\"\>", 
+   ",", "\<\"76.ap.txt.qwen3\"\>", ",", "\<\"76.aq.txt.qwen3\"\>", 
+   ",", "\<\"76.ar.txt.qwen3\"\>", ",", "\<\"76.as.txt.qwen3\"\>", 
+   ",", "\<\"76.at.txt.qwen3\"\>", ",", "\<\"76.au.txt.qwen3\"\>", 
+   ",", "\<\"76.av.txt.qwen3\"\>", ",", "\<\"76.ax.txt.qwen3\"\>", 
+   ",", "\<\"76.ay.txt.qwen3\"\>", ",", "\<\"76.az.txt.qwen3\"\>", 
+   ",", "\<\"76.ba.txt.qwen3\"\>", ",", "\<\"76.bb.txt.qwen3\"\>", 
+   ",", "\<\"76.bc.txt.qwen3\"\>", ",", "\<\"76.be.txt.qwen3\"\>", 
+   ",", "\<\"76.bf.txt.qwen3\"\>", ",", "\<\"76.bg.txt.qwen3\"\>", 
+   ",", "\<\"76.bh.txt.qwen3\"\>", ",", "\<\"76.bi.txt.qwen3\"\>", 
+   ",", "\<\"76.bj.txt.qwen3\"\>", ",", "\<\"76.bk.txt.qwen3\"\>", 
+   ",", "\<\"76.bl.txt.qwen3\"\>", ",", "\<\"76.bm.txt.qwen3\"\>", 
+   ",", "\<\"76.bn.txt.qwen3\"\>", ",", "\<\"76.bo.txt.qwen3\"\>", 
+   ",", "\<\"76.bp.txt.qwen3\"\>", ",", "\<\"76.bq.txt.qwen3\"\>", 
+   ",", "\<\"76.bs.txt.qwen3\"\>", ",", "\<\"76.bt.txt.qwen3\"\>", 
+   ",", "\<\"76.bu.txt.qwen3\"\>", ",", "\<\"76.bw.txt.qwen3\"\>", 
+   ",", "\<\"76.bx.txt.qwen3\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.983565380355342*^9, 3.9835655466243267`*^9},
+ CellLabel->"Out[49]=",ExpressionUUID->"c84b67c8-74cd-4eab-9c18-0bbcda190279"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"datadir", "<>", "\"\<qwen3validfile.csv\>\""}], ",", 
+   "qwen3validfile", ",", "\"\<CSV\>\"", ",", " ", 
+   RowBox[{"\"\<QuotingCharacter\>\"", "->", "\"\<\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.983564804007833*^9, 3.983564835539773*^9}, {
+  3.9835649638811483`*^9, 3.9835649696387377`*^9}, {3.983565202828861*^9, 
+  3.98356521224717*^9}, {3.983565392609582*^9, 3.983565403303938*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"e8420307-ef2a-4504-b8c0-55fa38341809"],
+
+Cell[BoxData["\<\"/Volumes/LaCie/BANK/_KAKEN/kokuritsu-daigaku/20250714_KAKEN/\
+test/qwen3validfile.csv\"\>"], "Output",
+ CellChangeTimes->{3.983565404300953*^9, 3.9835655500365353`*^9},
+ CellLabel->"Out[50]=",ExpressionUUID->"5ec4eb2b-ee6a-4d9d-807a-95dace4efd92"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 728}, {Automatic, 0}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (2025\:5e747\:67088\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2de70827-2675-4798-9531-8ac2179a6a9f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 166, 3, 96, "Title",ExpressionUUID->"da28dba6-a350-4bc5-a329-4ec4d39d89e2"],
+Cell[CellGroupData[{
+Cell[767, 29, 327, 6, 29, "Input",ExpressionUUID->"abe3f556-fc65-4c3b-8f51-b72b4a31057e"],
+Cell[1097, 37, 244, 3, 33, "Output",ExpressionUUID->"deb699c3-6d44-42e3-b8f5-c9012577150f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1378, 45, 153, 3, 66, "Section",ExpressionUUID->"17bbe77b-4888-405f-8410-cdef91088a1a"],
+Cell[CellGroupData[{
+Cell[1556, 52, 462, 10, 44, "Input",ExpressionUUID->"c776a1e4-c14b-47cf-9e84-ce78d2b88ea4"],
+Cell[2021, 64, 202, 3, 33, "Output",ExpressionUUID->"26cc9693-5022-4408-a34e-12897a422705"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2260, 72, 1157, 29, 118, "Input",ExpressionUUID->"ed0c5fed-9fba-4840-8535-07b88425b6b0"],
+Cell[3420, 103, 151, 2, 33, "Output",ExpressionUUID->"236ebc3d-b554-416f-a649-fe240dce6272"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3608, 110, 358, 9, 42, "Input",ExpressionUUID->"04ddcdc5-54fd-4fa6-b53f-fac1aec0fab8"],
+Cell[3969, 121, 5515, 80, 789, "Output",ExpressionUUID->"14bdaa35-ac08-4dcc-a609-f6ad724b4c1b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9521, 206, 445, 8, 42, "Input",ExpressionUUID->"53e0495a-7535-4082-949f-a6e1982f00a7"],
+Cell[9969, 216, 292, 4, 33, "Output",ExpressionUUID->"0c096861-478d-4a3f-b7dd-85bdaeeb7b66"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10310, 226, 153, 3, 66, "Section",ExpressionUUID->"1c99c317-b927-4b2f-a9fc-fcdb3474cf68"],
+Cell[CellGroupData[{
+Cell[10488, 233, 461, 10, 44, "Input",ExpressionUUID->"3c1913b0-d524-4023-bb51-49e0ea844320"],
+Cell[10952, 245, 150, 2, 33, "Output",ExpressionUUID->"bb189cda-c478-4cf0-9537-4d180c7f7ac4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11139, 252, 1206, 30, 118, "Input",ExpressionUUID->"5b62d0da-f0d7-4802-a7fe-dea077188cb3"],
+Cell[12348, 284, 172, 2, 33, "Output",ExpressionUUID->"6c4ed937-e831-4690-b80a-43da27ba4813"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12557, 291, 409, 10, 42, "Input",ExpressionUUID->"d478e0c2-0c03-4030-bb5a-493cc4ca4eb3"],
+Cell[12969, 303, 733, 12, 94, "Output",ExpressionUUID->"d6104ce4-e34b-45f9-9139-1350d9bdff4c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13739, 320, 493, 9, 42, "Input",ExpressionUUID->"6f1338c1-3ec4-4dee-849a-2b3aa59f3558"],
+Cell[14235, 331, 242, 3, 33, "Output",ExpressionUUID->"8742563b-67bf-4262-9aec-43cfddbb32de"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14526, 340, 150, 3, 66, "Section",ExpressionUUID->"10249ab7-ada1-4ee5-a66f-2022083a6416"],
+Cell[CellGroupData[{
+Cell[14701, 347, 511, 11, 44, "Input",ExpressionUUID->"c01280fd-fc74-4399-ae69-12493c99e3fc"],
+Cell[15215, 360, 151, 2, 33, "Output",ExpressionUUID->"13f5cc96-9eda-4b8e-9eff-4c0309236fb4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15403, 367, 1252, 30, 118, "Input",ExpressionUUID->"438a4396-dcf4-4a07-93c0-0f375b625cac"],
+Cell[16658, 399, 151, 2, 33, "Output",ExpressionUUID->"bb9bb8cd-6afd-4e77-8e64-e9af7067b788"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16846, 406, 480, 11, 42, "Input",ExpressionUUID->"401cde94-b468-44c4-9f4a-c45dad013717"],
+Cell[17329, 419, 6214, 92, 748, "Output",ExpressionUUID->"c84b67c8-74cd-4eab-9c18-0bbcda190279"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23580, 516, 537, 9, 42, "Input",ExpressionUUID->"e8420307-ef2a-4504-b8c0-55fa38341809"],
+Cell[24120, 527, 265, 3, 33, "Output",ExpressionUUID->"5ec4eb2b-ee6a-4d9d-807a-95dace4efd92"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
