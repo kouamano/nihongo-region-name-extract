@@ -11,7 +11,7 @@ def main():
 
     for i, b in enumerate(blocks, 1):
         lines = b.splitlines()
-        trimmed = "\n".join(lines[1:-1])
+        trimmed = "\n".join(lines[1:])
 
         print(f"Block {i}:")
         print(trimmed)
