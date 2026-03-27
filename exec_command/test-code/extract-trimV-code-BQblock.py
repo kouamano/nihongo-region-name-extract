@@ -13,9 +13,9 @@ def main():
         lines = b.splitlines()
         trimmed = "\n".join(lines[1:])
 
-        # print(f"Block {i}:")
+        print(f"Block {i}:")
         print(trimmed)
-        # print("------")
+        print("------")
 
 if __name__ == "__main__":
     main()
