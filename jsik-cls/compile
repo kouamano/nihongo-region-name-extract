@@ -1,0 +1,6 @@
+#!/bin/bash
+platex taikai2026.tex
+pbibtex taikai2026
+platex taikai2026
+platex taikai2026
+dvipdfmx taikai2026.dvi
