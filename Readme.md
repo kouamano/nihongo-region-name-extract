@@ -39,26 +39,7 @@ kokuritsu-daigaku/20250714_KAKEN/<番号>_chimeiResultMCB3.save
 [出力結果]
 https://github.com/kouamano/nihongo-region-name-extract/tree/main/kokuritsu-daigaku/20250714_KAKEN/
 
-[判定結果中間報告]（偽陽性が多い）
-https://kadai-my.sharepoint.com/:x:/r/personal/k7085637_kadai_jp/_layouts/15/doc2.aspx?sourcedoc=%7B2BF90661-4198-41EA-A407-4B2D7B1C4B34%7D&file=Book.xlsx&action=editNew&mobileredirect=true&wdOrigin=MAIL.SHELL%2CAPPHOME-WEB.UNAUTH%2CAPPHOME-WEB.BANNER.NEWBLANK&wdPreviousSession=9ab82ca7-4190-42dd-a786-52e52fede2bf&wdPreviousSessionSrc=AppHomeWeb&ct=1752567027023
 
-## サービス展開
-### UI
-- 検索結果をマップに表示する
-- マップのリージョンをクリックすると該当一覧が表示される
-いずれも、openstreetmap https://openstreetmap.org/ でできそう。
-#### 参考 https://chatgpt.com/c/688805c7-ee08-8002-bea7-08d6cdf869bb
-
-## 気がついたこと
-- 地名も形態素解析をかけてバラすと良い？
-
-# 今後の検討
-## geoplot
-- tomojsonは「市」（つまりファイル）単位で緯度経度情報がある
-## データの拡大
-### ドキュメントの拡大
-- リポジトリへの拡大が考えられる
-- 科研報告書もリポジトリに入れれば良いと思う。
-### 地名の拡大
-- 河川名はGeoNLPリポジトリにあり、水系ごとのページにGeoJSONがある。
-- 山や島嶼の名前で再利用可能なデータが見つからない、国土地理院のデータはほとんどがPDF。
+## 評価
+地名抽出の段階で精度を評価する。
+抽出された地名が、確かに地名であるかを判定する。地名であるはずのものが抽出されないリスクは残る。
