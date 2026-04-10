@@ -1,6 +1,7 @@
 %\documentclass[a4j,12pt,twocolumn]{jsik}
 \documentclass[12pt,a4paper,twocolumn,twoside]{jsik}
 \usepackage{balance}
+\usepackage{float}
 
 \begin{document}
 
@@ -55,17 +56,20 @@ Named Entity Recognition (NER), regional issues, AI
 \input{fig_cls.tex}
 \input{tab_diff.tex}
 
-\subsubsection{判定による修正の程度}
+\subsubsection{判定者による修正の程度}
 \input{syusei}
 \input{tab_countrev.tex}
 \input{tab_docs.tex}
 \input{figarray_hst.tex}
 
-\subsubsection{どのような地名が抽出・判定されたか}
+\subsubsection{地名の決定について}
 \input{chimeikettei}
 \input{chimeitokutyou}
 \input{chimeidaigaku}
 \input{tab_dice.tex}
+
+\section{まとめ・今後の展望}
+\input{matome}
 
 \section{データ利用可能性宣言}
 \input{data}
