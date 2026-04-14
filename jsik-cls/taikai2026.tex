@@ -1,6 +1,7 @@
 %\documentclass[a4j,12pt,twocolumn]{jsik}
 \documentclass[12pt,a4paper,twocolumn,twoside]{jsik}
 \usepackage{balance}
+\usepackage{placeins}
 \usepackage{float}
 \usepackage{caption}
 \captionsetup[table]{skip=6pt}
@@ -77,6 +78,7 @@ Named Entity Recognition (NER), Morphological analysis, regional issues, AI
 \input{eq_dice.tex}
 \input{tab_dice.tex}
 
+\balance
 \section{まとめ・今後の課題}
 \input{matome}
 
@@ -85,6 +87,7 @@ Named Entity Recognition (NER), Morphological analysis, regional issues, AI
 
 %\footnote{http://masao.jpn.org/software/jsik\_bst/} が同封されています．
 
+\FloatBarrier
 \balance
 \bibliographystyle{jsik}
 \bibliography{takaku}
