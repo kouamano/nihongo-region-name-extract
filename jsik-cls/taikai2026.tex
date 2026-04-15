@@ -5,6 +5,12 @@
 \usepackage{float}
 \usepackage{caption}
 \captionsetup[table]{skip=6pt}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\floatpagefraction}{1.0}
+\renewcommand{\dbltopfraction}{1.0}
+\renewcommand{\dblfloatpagefraction}{1.0}
 \renewcommand{\theequation}{式 \arabic{equation}}
 
 \begin{document}
@@ -40,8 +46,8 @@ Keywords: Named Entity Recognition (NER), Morphological analysis, regional issue
 
 \maketitle
 
-\section{背景}
 \input{fig_kg.tex}
+\section{背景}
 \input{haikei-1}
 \input{haikei-2}
 
