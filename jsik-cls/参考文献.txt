@@ -1,0 +1,30 @@
+# web
+{
+https://www.tandfonline.com/doi/full/10.1080/13658816.2024.2405182
+"Toponym resolution leveraging lightweight and open-source large language models and geo-knowledge"
+}
+{
+https://aclanthology.org/C14-1147.pdf
+"Collective Named Entity Disambiguation using Graph Ranking and Clique Partitioning Approaches"
+}
+{
+https://ipsj.ixsq.nii.ac.jp/record/231338/files/IPSJ-CH2023003.pdf
+"歴史災害史料からの自動地名抽出に向けた 自然言語処理システムの性能評価"
+}
+{
+https://cir.nii.ac.jp/crid/1040862776833298560
+"文章中の人物の移動軌跡を実世界の地図上に接地するための基礎研究とその応用"
+グラウンディングが目的なので、地名の抽出制度とは異なる。
+}
+# ローカルNAS
+{
+/Volumes/Public/ArticlesAndDocuments/82033-ana-cardoso_dissertacao.pdf
+"Toponym Resolution in Text"
+学位論文
+固有表現に対してラベル（クラス）を付与する、独自NNを開発する例
+}
+{
+/Volumes/Public/ArticlesAndDocuments/C14-1147.pdf
+"Collective Named Entity Disambiguation using Graph Ranking and Clique Partitioning Approaches"
+knowledge base (辞書とグラフ) を利用
+}
